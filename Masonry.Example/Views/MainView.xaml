@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Masonry.Example.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:masonry="clr-namespace:Masonry;assembly=Masonry"
+             xmlns:common="clr-namespace:Masonry.Example.Common"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" BorderThickness="1 1 1 0" BorderBrush="Black">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Text="{Binding Header, FallbackValue=Header}" FontSize="36"
+                       TextWrapping="Wrap" />
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" BorderThickness="0 1 1 1" BorderBrush="Black">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Amount" TextWrapping="Wrap" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0 0 1 1" BorderBrush="Black">
+            <TextBox Padding="5" VerticalAlignment="Center" Text="{Binding Amount, FallbackValue=3}"
+                     TextAlignment="Center"
+                     common:TextBoxMaskBehavior.Mask="Integer"
+                     common:TextBoxMaskBehavior.MinimumValue="1"
+                     common:TextBoxMaskBehavior.MaximumValue="50" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="0 0 1 1" BorderBrush="Black">
+            <Button Content="Add Elements" Command="{Binding AddClickCommand}" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="0 0 1 0" BorderBrush="Black">
+            <Button Content="Reset Elements" Command="{Binding ResetClickCommand}" />
+        </Border>
+        <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="Black">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                <masonry:AnimatedMasonryControl ItemsSource="{Binding Elements}" AnimationDuration="0:0:2" Spacing="5"
+                                                Background="#E3E3E3" />
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>
