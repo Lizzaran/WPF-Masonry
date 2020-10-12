@@ -27,7 +27,8 @@ steps:
   inputs:
     packageType: 'sdk'
     version: '5.0.x'
-
+    includePreviewVersions: true
+    
 - task: NuGetToolInstaller@1
   displayName: Install Latest Nuget
   
