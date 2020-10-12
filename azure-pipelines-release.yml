@@ -22,13 +22,6 @@ variables:
 
 name: 2.0.$(date:yyMM).$(date:dd)$(rev:r)
 steps:
-
-- task: UseDotNet@2
-  displayName: Install Latest .Net Core 5.0.x
-  inputs:
-    packageType: 'sdk'
-    version: '5.0.x'
-    includePreviewVersions: true
     
 - task: UseDotNet@2
   displayName: Install Latest .Net Core 3.1.x
@@ -56,7 +49,7 @@ steps:
   displayName: Copy Files to $(build.artifactstagingdirectory)
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
-    Contents: '**/*.nupkg'
+    Contents: '**/wpfmasonry.*.nupkg'
     TargetFolder: '$(build.artifactstagingdirectory)'
     flattenFolders: true
 
