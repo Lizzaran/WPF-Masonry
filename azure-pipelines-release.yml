@@ -26,9 +26,8 @@ steps:
   displayName: Install Latest .Net Core 5.0.x
   inputs:
     packageType: 'sdk'
-    version: '5.0.x'
-    includePreviewVersions: true
-    
+    useGlobalJson: true
+
 - task: NuGetToolInstaller@1
   displayName: Install Latest Nuget
   
