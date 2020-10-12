@@ -20,7 +20,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-name: 1.0.$(date:yyMM).$(date:dd)$(rev:r)
+name: 2.0.$(date:yyMM).$(date:dd)$(rev:r)
 steps:
 - task: UseDotNet@2
   displayName: Install Latest .Net Core 3.1.x
