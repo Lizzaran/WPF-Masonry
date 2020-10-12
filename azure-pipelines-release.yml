@@ -23,10 +23,10 @@ variables:
 name: 2.0.$(date:yyMM).$(date:dd)$(rev:r)
 steps:
 - task: UseDotNet@2
-  displayName: Install Latest .Net Core 3.1.x
+  displayName: Install Latest .Net Core 5.0.x
   inputs:
     packageType: 'sdk'
-    version: '3.1.x'
+    version: '5.0.x'
 
 - task: NuGetToolInstaller@1
   displayName: Install Latest Nuget
