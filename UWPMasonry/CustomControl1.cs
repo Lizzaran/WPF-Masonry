@@ -358,6 +358,7 @@ namespace UWPMasonry
         {
             base.OnApplyTemplate();
 
+            Update();
         }
     }
 }

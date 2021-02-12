@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:uwpmasonry="using:UWPMasonry"
     xmlns:vm="using:UWPSample.ViewModels"
+    xmlns:iconPacks="using:MahApps.Metro.IconPacks"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
@@ -31,46 +32,67 @@
         <vm:MainViewModel />
     </Page.DataContext>
     <Grid>
-        <uwpmasonry:CustomControl1 Spacing="5">
+        <uwpmasonry:CustomControl1 Spacing="5" MaxWidth="850" d:Width="500">
             <Border  Margin="3"
                                Background="Teal"
                                Style="{StaticResource TallLargeTileStyle}" >
                 <Rectangle Width="50" Height="50">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="/Project42;component/Resources/jobs_white.png" />
+                        <ImageBrush ImageSource="/Assets/jobs_white.png" />
                     </Rectangle.Fill>
                 </Rectangle>
             </Border>
             <Border  Margin="3"
                                Background="#ff4a03"
-                               Style="{StaticResource LargeTileStyle}">
+                               Style="{StaticResource LargeTileStyle}" >
+                <iconPacks:PackIconMaterial Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="AccountMultiple" />
             </Border>
             <Border 
                                Background="Green" 
                                Style="{StaticResource LargeTileStyle}" >
+                <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="Bank" />
 
             </Border>
             <Border 
                                Background="BlueViolet"
                                Style="{StaticResource SmallTileStyle}" >
+                <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="CreditCard" />
 
             </Border>
             <Border 
                                Background="#D2691E"
                                Style="{StaticResource LargeTileStyle}" >
+                <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="Printer" />
             </Border>
             <Border 
                                Background="Gray" 
                                Style="{StaticResource SmallTileStyle}" >
+                <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="ChartBar" />
 
             </Border>
             <Border
                                Background="#FF00364A" 
                                Style="{StaticResource LargeTileStyle}">
+                <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="Cog" />
 
             </Border>
             <Border  Background="RosyBrown"
                                Style="{StaticResource LargeTileStyle}"  >
+                <iconPacks:PackIconMaterial Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="40" Foreground="White"
+                                                Kind="NaturePeople" />
 
             </Border>
         </uwpmasonry:CustomControl1>
