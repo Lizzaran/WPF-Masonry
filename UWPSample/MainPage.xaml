@@ -12,19 +12,25 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
         <ResourceDictionary>
-            <Style x:Key="LargeTileStyle" TargetType="Border">
+            <Style x:Key="LargeTileStyle" TargetType="uwpmasonry:Tile">
                 <Setter Property="Height" Value="125" />
                 <Setter Property="Width" Value="300" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="TitleFontSize" Value="12" />
             </Style>
 
-            <Style x:Key="TallLargeTileStyle" TargetType="Border">
+            <Style x:Key="TallLargeTileStyle" TargetType="uwpmasonry:Tile">
                 <Setter Property="Height" Value="255" />
                 <Setter Property="Width" Value="300" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="TitleFontSize" Value="12" />
             </Style>
 
-            <Style x:Key="SmallTileStyle" TargetType="Border">
+            <Style x:Key="SmallTileStyle" TargetType="uwpmasonry:Tile">
                 <Setter Property="Height" Value="125" />
                 <Setter Property="Width" Value="147" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="TitleFontSize" Value="12" />
             </Style>
         </ResourceDictionary>
     </Page.Resources>
@@ -32,70 +38,72 @@
         <vm:MainViewModel />
     </Page.DataContext>
     <Grid>
-        <uwpmasonry:CustomControl1 Spacing="5" MaxWidth="850" d:Width="500">
-            <Border  Margin="3"
-                               Background="Teal"
-                               Style="{StaticResource TallLargeTileStyle}" >
+        <uwpmasonry:MasonryControl Spacing="5" MaxWidth="850" d:Width="850" Margin="0,10,0,0">
+            <uwpmasonry:Tile Title="Projects" 
+                             Style="{StaticResource TallLargeTileStyle}"
+                             Background="Teal" 
+                             HorizontalTitleAlignment="Right">
                 <Rectangle Width="50" Height="50">
                     <Rectangle.Fill>
                         <ImageBrush ImageSource="/Assets/jobs_white.png" />
                     </Rectangle.Fill>
                 </Rectangle>
-            </Border>
-            <Border  Margin="3"
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile Margin="3" Title="Customers"
                                Background="#ff4a03"
-                               Style="{StaticResource LargeTileStyle}" >
+                               Style="{StaticResource LargeTileStyle}" HorizontalTitleAlignment="Right">
                 <iconPacks:PackIconMaterial Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="AccountMultiple" />
-            </Border>
-            <Border 
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile Title="Financials"
                                Background="Green" 
                                Style="{StaticResource LargeTileStyle}" >
                 <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="Bank" />
 
-            </Border>
-            <Border 
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile Title="Leads"
                                Background="BlueViolet"
                                Style="{StaticResource SmallTileStyle}" >
                 <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="CreditCard" />
 
-            </Border>
-            <Border 
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile Title="Reports"
                                Background="#D2691E"
-                               Style="{StaticResource LargeTileStyle}" >
+                               Style="{StaticResource LargeTileStyle}" HorizontalTitleAlignment="Right">
                 <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="Printer" />
-            </Border>
-            <Border 
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile Title="Business Intelligence"
                                Background="Gray" 
                                Style="{StaticResource SmallTileStyle}" >
                 <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="ChartBar" />
 
-            </Border>
-            <Border
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile  Title="Utilities"
                                Background="#FF00364A" 
                                Style="{StaticResource LargeTileStyle}">
                 <iconPacks:PackIconMaterialLight Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="Cog" />
 
-            </Border>
-            <Border  Background="RosyBrown"
-                               Style="{StaticResource LargeTileStyle}"  >
+            </uwpmasonry:Tile>
+            <uwpmasonry:Tile Title="Employees"
+                             Background="RosyBrown"
+                               Style="{StaticResource LargeTileStyle}" HorizontalTitleAlignment="Right" >
                 <iconPacks:PackIconMaterial Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"
                                                 Height="40" Foreground="White"
                                                 Kind="NaturePeople" />
 
-            </Border>
-        </uwpmasonry:CustomControl1>
+            </uwpmasonry:Tile>
+        </uwpmasonry:MasonryControl>
 
 
     </Grid>

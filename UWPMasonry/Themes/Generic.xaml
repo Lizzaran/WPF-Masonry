@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWPMasonry">
 
-    <Style TargetType="local:CustomControl1" >
+    <Style TargetType="local:MasonryControl" >
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
@@ -12,4 +12,56 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="local:Tile">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:Tile">
+                    <Grid>
+                        <Border x:Name="PART_Border" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Orientation="Horizontal">
+                                    <ContentPresenter  />
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               FontSize="{TemplateBinding CountFontSize}"
+                                               Text="{TemplateBinding Count}" />
+                                </StackPanel>
+                                <TextBlock HorizontalAlignment="{TemplateBinding HorizontalTitleAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalTitleAlignment}"
+                                       Foreground="{TemplateBinding Foreground}" Margin="5"
+                                                FontSize="{TemplateBinding TitleFontSize}"
+                                                Text="{TemplateBinding Title}"
+                                                TextWrapping="Wrap" >
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                       
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="VisualStateGroup">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <Setter Target="PART_Border.Background" Value="{ThemeResource ButtonBackgroundPointerOver}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Target="PART_Border.Background" Value="{ThemeResource ButtonBackgroundPressed}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <VisualState.Setters>
+                                        <Setter Target="PART_Border.Background" Value="{ThemeResource ButtonBorderBrushDisabled}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                 </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

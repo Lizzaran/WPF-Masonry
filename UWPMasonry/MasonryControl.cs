@@ -17,14 +17,14 @@ using Windows.UI.Xaml.Media;
 
 namespace UWPMasonry
 {
-    public class CustomControl1 : ItemsControl
+    public class MasonryControl : ItemsControl
     {
         #region Static Fields
 
         /// <summary>
         ///     The spacing property
         /// </summary>
-        public static readonly DependencyProperty SpacingProperty = DependencyProperty.Register(nameof(Spacing),typeof(int), typeof(CustomControl1), null);
+        public static readonly DependencyProperty SpacingProperty = DependencyProperty.Register(nameof(Spacing),typeof(int), typeof(MasonryControl), null);
 
 
         #endregion
@@ -82,9 +82,9 @@ namespace UWPMasonry
 
         #endregion
 
-        public CustomControl1()
+        public MasonryControl()
         {
-            this.DefaultStyleKey = typeof(CustomControl1);
+            this.DefaultStyleKey = typeof(MasonryControl);
 
            
         }
